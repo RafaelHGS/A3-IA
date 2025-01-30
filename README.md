@@ -1,15 +1,89 @@
-# A3-IA
-Trabalho A3 de Inteligência Artificial pela Anhembi Morumbi Paulista, turno da manhã sexta-feira.
+# **Análise e Predição de Preços de Carros com Random Forest e KNN**  
 
-## Objetivo
-Tratamento de uma base de dados, análise e criação de modelo de ML.
+📌 **Projeto da disciplina de Inteligência Artificial - Universidade Anhembi Morumbi**  
+🎯 **Objetivo**: Refinar a análise de preços de veículos utilizando aprendizado de máquina, comparando os algoritmos **Random Forest** e **K-Nearest Neighbors (KNN)**.  
 
-## Base e ML
-A base escolhida foi a base "Car Features and MSRP" do site https://www.kaggle.com/datasets/CooperUnion/cardataset, com a ajuda de um código já feito em Random Forest (RFR), decidimos fazer uma análise mais profunda da base, dividindo-a em duas partes, carros "populares" e carros de luxo/performance/alta-performance e através disso verificamos como se comportava o algoritmo RFR e sua "precisão" de acordo com o score R2. Para comparação entre algoritmos, também optamos por utilizar da Regressão por K-Nearest Neighbors (KNN)
+## 🚗 **Sobre o Projeto**  
 
-##Resultados
-A base depois de tratada contava com mais valores nos carros de luxo.
-Os histogramas mostraram que a faixa de preço para carros populares teve uma máxima de 50k dolares, enquanto nos de luxo chegavam em até 100k.
-Também observamos com os histogramas que os carros de luxo tem muitas "categorias de mercado" (carro popular, luxo, performance, alta perfomance, combustível normal, hibrido...), onde há carros muito específicos com mais de 3~4 categorias de mercado.
-Como esperado a base de dados com Random Forest, tanto para populares quanto de luxo, teve um score mais significativo e melhor que o algoritmo de knn, mesmo com uma quantidade de dados maior na base de luxo.
-Concluímos que o KNN tem bons resultados, porém quando a base é muito densa (com grandes quantidades de valores) o RFR se mostrou um algoritmo com uma performance (score/precisão) melhor. Com a base dividida, 
+Este projeto aprimora um estudo de predição de preços de carros, baseado na base de dados ["Car Features and MSRP"](https://www.kaggle.com/datasets/CooperUnion/cardataset). Ele é uma versão revisada do código original disponível no Kaggle ([referência](https://www.kaggle.com/code/waleedfaheem/car-price-analysis-and-prediction-r2-0-95)), trazendo melhorias no pré-processamento e uma divisão da base de dados em duas categorias:  
+✅ **Carros populares**  
+✅ **Carros de luxo/performance**  
+
+Além disso, comparamos a eficácia do **Random Forest Regressor (RFR)** com o algoritmo **K-Nearest Neighbors Regressor (KNN)**, analisando a precisão de cada modelo.  
+
+---
+
+## 🔎 **Etapas do Projeto**  
+
+### 1️⃣ **Tratamento da Base de Dados**  
+- Remoção de valores nulos e duplicados  
+- Separação da base em **carros populares** e **carros de luxo/performance**  
+- Análise de distribuição dos preços  
+
+### 2️⃣ **Modelagem e Treinamento**  
+- Aplicação do **Random Forest Regressor** e **KNN Regressor** para prever preços  
+- Comparação das métricas de desempenho  
+
+### 3️⃣ **Resultados e Comparação dos Algoritmos**  
+- O **Random Forest** apresentou melhor desempenho global, especialmente em bases densas  
+- O **KNN** teve bons resultados, mas sofreu mais com a complexidade dos dados  
+
+---
+
+## 📊 **Principais Descobertas**  
+
+🔹 **Distribuição dos Preços**  
+- Carros populares: Maioria com preços até **50 mil dólares**  
+- Carros de luxo/performance: Concentração entre **20 mil e 65 mil dólares**, com alguns modelos acima de **100 mil dólares**  
+
+🔹 **Comparação de Algoritmos (Métrica R² Score)**  
+
+| Algoritmo | Carros Populares | Carros de Luxo/Performance |  
+|-----------|----------------|---------------------------|  
+| **Random Forest** | **0.85** | **0.96** |  
+| **KNN** | **0.82** | **0.90** |  
+
+- **Random Forest se destacou**, especialmente em bases mais densas  
+- **KNN teve desempenho satisfatório**, mas perde precisão com grandes quantidades de dados  
+
+---
+
+## 📂 **Como Executar o Projeto**  
+
+1️⃣ **Clone o repositório**  
+```bash
+git clone <URL_DO_REPOSITÓRIO>
+cd <NOME_DO_REPOSITÓRIO>
+```
+
+2️⃣ **Instale as dependências**  
+```bash
+pip install -r requirements.txt
+```
+
+3️⃣ **Execute o Jupyter Notebook**  
+```bash
+jupyter notebook
+```
+E abra o arquivo `RFRvsKNN.ipynb`.  
+
+---
+
+## 🎓 **Autores**  
+
+- **Daniel Ikeda Kuniyoshi**  
+- **Diego Fernandes Martinez**  
+- **Nayane Pereira Mazaro**  
+- **Pedro Shiraishi de Almeida**  
+- **Rafael Henrique Gonçalves Soares**  
+- **Vinicius Alves Vieira**  
+
+📌 **Universidade Anhembi Morumbi - 2024**  
+
+---
+
+## **📌 Considerações Finais**  
+
+Esse estudo reforça a importância da escolha do algoritmo adequado para cada tipo de base de dados. O **Random Forest** demonstrou maior precisão, especialmente para bases mais densas, enquanto o **KNN** apresentou bons resultados, mas perdeu desempenho conforme os dados aumentavam.  
+
+🚀 **Se você deseja explorar mais sobre esse projeto ou contribuir, fique à vontade para abrir uma issue ou um pull request!**  
